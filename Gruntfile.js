@@ -40,11 +40,7 @@ module.exports = function(grunt) {
 
     eslint: {
       target: [
-        'app/*.js',
-        'app/**/*.js',
-        'lib/*.js',
-        'public/client/*.js',
-        'public/lib/*.js'
+      'public/src/built.js'
         // Add list of files to lint here
       ]
     },
@@ -101,7 +97,9 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
-  grunt.registerTask('eslint');
+  grunt.registerTask('eslint', [
+    'eslint'
+  ]);
 
   grunt.registerTask('test', [
     'mochaTest'
